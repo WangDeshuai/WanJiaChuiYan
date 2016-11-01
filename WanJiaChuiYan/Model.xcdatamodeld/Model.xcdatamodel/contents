@@ -1,0 +1,29 @@
+<?xml version="1.0" encoding="UTF-8" standalone="yes"?>
+<model userDefinedModelVersionIdentifier="" type="com.apple.IDECoreDataModeler.DataModel" documentVersion="1.0" lastSavedToolsVersion="10174" systemVersion="15F34" minimumToolsVersion="Xcode 7.0">
+    <entity name="The_Menu" representedClassName="The_Menu" syncable="YES">
+        <attribute name="fenShu" optional="YES" attributeType="String" syncable="YES"/>
+        <attribute name="kitchenId" optional="YES" attributeType="String" syncable="YES"/>
+        <attribute name="menID1" optional="YES" attributeType="String" syncable="YES"/>
+        <attribute name="menID2" optional="YES" attributeType="String" syncable="YES"/>
+        <attribute name="menID3" optional="YES" attributeType="String" syncable="YES"/>
+        <attribute name="menuId" optional="YES" attributeType="String" syncable="YES"/>
+        <attribute name="name1" optional="YES" attributeType="String" syncable="YES"/>
+        <attribute name="name2" optional="YES" attributeType="String" syncable="YES"/>
+        <attribute name="name3" optional="YES" attributeType="String" syncable="YES"/>
+        <attribute name="price1" optional="YES" attributeType="String" syncable="YES"/>
+        <attribute name="price2" optional="YES" attributeType="String" syncable="YES"/>
+        <attribute name="price3" optional="YES" attributeType="String" syncable="YES"/>
+    </entity>
+    <entity name="TheMenuTwo" representedClassName="TheMenuTwo" syncable="YES">
+        <attribute name="caiID" optional="YES" attributeType="String" syncable="YES"/>
+        <attribute name="menID" optional="YES" attributeType="String" syncable="YES"/>
+        <attribute name="menName" optional="YES" attributeType="String" syncable="YES"/>
+        <attribute name="menPrice" optional="YES" attributeType="String" syncable="YES"/>
+        <attribute name="other" optional="YES" attributeType="String" syncable="YES"/>
+        <attribute name="xuhao" optional="YES" attributeType="String" syncable="YES"/>
+    </entity>
+    <elements>
+        <element name="The_Menu" positionX="-63" positionY="-18" width="128" height="225"/>
+        <element name="TheMenuTwo" positionX="-63" positionY="54" width="128" height="135"/>
+    </elements>
+</model>

@@ -1,0 +1,87 @@
+//
+//  PrefixHeader.pch
+//  WanJiaChuiYan
+//    14244765.96637187,
+//  Created by Macx on 16/8/10.
+//  Copyright © 2016年 Macx. All rights reserved.
+//
+
+#ifndef PrefixHeader_pch
+#define PrefixHeader_pch
+/*
+ 宏定义
+ */
+#define ScreenWidth [UIScreen mainScreen].bounds.size.width
+#define ScreenHeight [UIScreen mainScreen].bounds.size.height
+#define WINDOW [UIApplication sharedApplication].delegate.window
+#define SERVICE  @"http://119.29.83.154:8080/OrderSystem/"
+/*
+ 外网：119.29.83.154
+ 内网：192.168.1.103
+ */
+
+/*
+ 头文件导入
+ */
+#import "HomeViewController.h"
+#import "OrderViewController.h"
+#import "MyViewController.h"
+#import "BaseNavigationController.h"
+#import "LoginViewController.h"
+
+/*
+ 工具类
+ 
+ */
+#import "Engine.h"//网路请求类
+#import "ToolClass.h"//工具类
+#import "ZYData.h"//数据库类
+#import "The_Menu.h"//数据库类
+#import "TheMenuTwo.h"
+#import "MenData.h"
+/*
+ 第三方类
+ 
+ */
+//#import "UIWindow+YzdHUD.h"//加载指示器
+#import "LCProgressHUD.h"
+#import "MJExtension.h"
+#import "XYString.h"
+#import "AFNetworking.h"
+#import "UITableView+SDAutoTableViewCellHeight.h"//SDAutoLayout
+#import "UIView+SDAutoLayout.h"//SDAutoLayout
+#import "UIKit+AFNetworking.h"//异步加载图片
+#import "SGTopTitleView.h"//滚动试图子试图
+
+/*
+ 百度地图集成
+ 
+ */
+
+#import <BaiduMapAPI_Base/BMKBaseComponent.h>//引入base相关所有的头文件
+
+#import <BaiduMapAPI_Map/BMKMapComponent.h>//引入地图功能所有的头文件
+
+#import <BaiduMapAPI_Search/BMKSearchComponent.h>//引入检索功能所有的头文件
+
+#import <BaiduMapAPI_Cloud/BMKCloudSearchComponent.h>//引入云检索功能所有的头文件
+
+#import <BaiduMapAPI_Location/BMKLocationComponent.h>//引入定位功能所有的头文件
+
+#import <BaiduMapAPI_Utils/BMKUtilsComponent.h>//引入计算工具所有的头文件
+
+#import <BaiduMapAPI_Radar/BMKRadarComponent.h>//引入周边雷达功能所有的头文件
+
+#import <BaiduMapAPI_Map/BMKMapView.h>//只引入所需的单个头文件
+/*
+ 支付宝集成
+ 
+ */
+#import <AlipaySDK/AlipaySDK.h>
+/*
+ 微信集成
+ */
+
+#import "WXApi.h"
+#import "WXApiObject.h"
+#endif /* PrefixHeader_pch */
