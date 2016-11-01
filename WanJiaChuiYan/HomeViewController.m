@@ -18,6 +18,8 @@
 #import "CityViewController.h"
 #import "MyXiaoZhanViewController.h"
 #import "WanJiaChuFangViewController.h"
+#define Fount 15
+#define corol [UIColor colorWithRed:3/255.0 green:180/255.0 blue:15/255.0 alpha:1]
 @interface HomeViewController ()
 {
     UIImageView * imageview1;
@@ -237,12 +239,12 @@
     [btnDian1 setBackgroundImage:[UIImage imageNamed:@"link_bg"] forState:0];
     [btnDian1 addTarget:self action:@selector(chufang) forControlEvents:UIControlEventTouchUpInside];
     [btnDian1 setTitle:@"申请厨房" forState:0];
-    btnDian1.titleLabel.font=[UIFont systemFontOfSize:13];
-    [btnDian1 setTitleColor:[UIColor colorWithRed:0/255.0 green:139/255.0 blue:9/255.0 alpha:1] forState:0];
+    btnDian1.titleLabel.font=[UIFont systemFontOfSize:Fount];
+    [btnDian1 setTitleColor:corol forState:0];
     [imageview1 sd_addSubviews:@[btnDian1]];
     btnDian1.sd_layout
     .leftSpaceToView(animation,2)
-    .topSpaceToView(imageview1,55)
+    .topSpaceToView(imageview1,65)
     .widthIs(128/2)
     .heightIs(42/2);
     
@@ -253,8 +255,8 @@
     [imageview1 sd_addSubviews:@[chufang]];
     
     chufang.sd_layout
-    .topSpaceToView(imageview1,35)
-    .leftSpaceToView(imageview1,50)
+    .topSpaceToView(imageview1,30)
+    .centerXIs(ScreenWidth/2-50)
     .widthIs(26)
     .heightIs(26);
 
@@ -264,8 +266,8 @@
     guize.tag=1;
     [guize addTarget:self action:@selector(guiZe:) forControlEvents:UIControlEventTouchUpInside];
     [guize setTitle:@"我的午餐" forState:0];
-    guize.titleLabel.font=[UIFont systemFontOfSize:13];
-    [guize setTitleColor:[UIColor colorWithRed:0/255.0 green:139/255.0 blue:9/255.0 alpha:1] forState:0];
+    guize.titleLabel.font=[UIFont systemFontOfSize:Fount];
+    [guize setTitleColor:[UIColor colorWithRed:77/255.0 green:57/255.0 blue:0/255.0 alpha:1] forState:0];
     [imageview1 sd_addSubviews:@[guize]];
     guize.sd_layout
     .leftSpaceToView(chufang,2)
@@ -285,20 +287,20 @@
     [imageview2 sd_addSubviews:@[animation2]];
     
     animation2.sd_layout
-    .leftSpaceToView(imageview2,75)
+    .leftSpaceToView(imageview2,85)
     .topSpaceToView(imageview2,55)
     .widthIs(26)
     .heightIs(26);
     
     btnDian2 =[UIButton buttonWithType:UIButtonTypeCustom];
     [btnDian2 setBackgroundImage:[UIImage imageNamed:@"arrow-bg"] forState:0];
-  [btnDian2 addTarget:self action:@selector(xiaozhan) forControlEvents:UIControlEventTouchUpInside];
+   [btnDian2 addTarget:self action:@selector(xiaozhan) forControlEvents:UIControlEventTouchUpInside];
     [btnDian2 setTitle:@"申请小站" forState:0];
-    btnDian2.titleLabel.font=[UIFont systemFontOfSize:13];
-    [btnDian2 setTitleColor:[UIColor colorWithRed:0/255.0 green:139/255.0 blue:9/255.0 alpha:1] forState:0];
+    btnDian2.titleLabel.font=[UIFont systemFontOfSize:Fount];
+    [btnDian2 setTitleColor:corol forState:0];
     [imageview2 sd_addSubviews:@[btnDian2]];
     btnDian2.sd_layout
-    .leftSpaceToView(imageview2,5)
+    .leftSpaceToView(imageview2,15)
     .topSpaceToView(imageview2,50)
     .widthIs(128/2)
     .heightIs(42/2);
@@ -319,10 +321,10 @@
     btnDian3.tag=2;
     [btnDian3 addTarget:self action:@selector(guiZe:) forControlEvents:UIControlEventTouchUpInside];
     [btnDian3 setTitle:@"申请规则" forState:0];
-    btnDian3.titleLabel.font=[UIFont systemFontOfSize:13];
+    btnDian3.titleLabel.font=[UIFont systemFontOfSize:Fount];
   //  [btnDian3 setTitleColor:[UIColor colorWithRed:73/255.0 green:210/255.0 blue:120/255.0 alpha:1] forState:0];
     
-    [btnDian3 setTitleColor:[UIColor colorWithRed:0/255.0 green:139/255.0 blue:9/255.0 alpha:1] forState:0];
+    [btnDian3 setTitleColor:[UIColor colorWithRed:77/255.0 green:57/255.0 blue:0/255.0 alpha:1] forState:0];
     [imageview2 sd_addSubviews:@[btnDian3]];
     btnDian3.sd_layout
     .leftSpaceToView(animation3,5)
@@ -346,8 +348,8 @@
    // btnDian4.hidden=YES;
     [btnDian4 setTitle:@"申请中" forState:0];
     [btnDian4 addTarget:self action:@selector(shenqing:) forControlEvents:UIControlEventTouchUpInside];
-    btnDian4.titleLabel.font=[UIFont systemFontOfSize:13];
-    [btnDian4 setTitleColor:[UIColor colorWithRed:0/255.0 green:139/255.0 blue:9/255.0 alpha:1] forState:0];
+    btnDian4.titleLabel.font=[UIFont systemFontOfSize:Fount];
+    [btnDian4 setTitleColor:corol forState:0];
     [imageview2 sd_addSubviews:@[btnDian4]];
     btnDian4.sd_layout
     .leftSpaceToView(animation4,5)
@@ -380,8 +382,8 @@
    // btnDian5.hidden=YES;
     [btnDian5 setTitle:@"打饭" forState:0];
     [btnDian5 addTarget:self action:@selector(dafan) forControlEvents:UIControlEventTouchUpInside];
-    btnDian5.titleLabel.font=[UIFont systemFontOfSize:13];
-    [btnDian5 setTitleColor:[UIColor colorWithRed:0/255.0 green:139/255.0 blue:9/255.0 alpha:1] forState:0];
+    btnDian5.titleLabel.font=[UIFont systemFontOfSize:Fount];
+    [btnDian5 setTitleColor:corol forState:0];
     [imageview3 sd_addSubviews:@[btnDian5]];
     btnDian5.sd_layout
     .leftSpaceToView(imageview3,5)
@@ -405,9 +407,8 @@
    // btnDian6.hidden=YES;
     [btnDian6 addTarget:self action:@selector(tuiguangma:) forControlEvents:UIControlEventTouchUpInside];
     [btnDian6 setTitle:@"推广" forState:0];
-    btnDian6.titleLabel.font=[UIFont systemFontOfSize:13];
-    //[btnDian6 setTitleColor:[UIColor colorWithRed:73/255.0 green:210/255.0 blue:120/255.0 alpha:1] forState:0];
-    [btnDian6 setTitleColor:[UIColor colorWithRed:0/255.0 green:139/255.0 blue:9/255.0 alpha:1] forState:0];
+    btnDian6.titleLabel.font=[UIFont systemFontOfSize:Fount];
+    [btnDian6 setTitleColor:corol forState:0];
     [imageview3 sd_addSubviews:@[btnDian6]];
     btnDian6.sd_layout
     .leftSpaceToView(animation6,5)
@@ -432,8 +433,8 @@
     [btnDian7 addTarget:self action:@selector(guiZe:) forControlEvents:UIControlEventTouchUpInside];
     
     [btnDian7 setTitle:@"介绍" forState:0];
-    btnDian7.titleLabel.font=[UIFont systemFontOfSize:13];
-    [btnDian7 setTitleColor:[UIColor colorWithRed:0/255.0 green:139/255.0 blue:9/255.0 alpha:1] forState:0];
+    btnDian7.titleLabel.font=[UIFont systemFontOfSize:Fount];
+    [btnDian7 setTitleColor:[UIColor colorWithRed:77/255.0 green:57/255.0 blue:0/255.0 alpha:1] forState:0];
     [imageview3 sd_addSubviews:@[btnDian7]];
     btnDian7.sd_layout
     .leftSpaceToView(animation7,5)
