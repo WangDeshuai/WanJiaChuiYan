@@ -151,7 +151,6 @@
 		8FA289AA1D6BF33500232168 /* XYString.m in Sources */ = {isa = PBXBuildFile; fileRef = 8FA289A91D6BF33500232168 /* XYString.m */; };
 		8FA289C61D6BFF6C00232168 /* LogineModel.m in Sources */ = {isa = PBXBuildFile; fileRef = 8FA289C51D6BFF6C00232168 /* LogineModel.m */; };
 		8FA289CB1D6C217F00232168 /* ToolClass.m in Sources */ = {isa = PBXBuildFile; fileRef = 8FA289CA1D6C217F00232168 /* ToolClass.m */; };
-		8FACF6C11DB0B6F000F599D3 /* myerweima.png in Resources */ = {isa = PBXBuildFile; fileRef = 8FACF6C01DB0B6F000F599D3 /* myerweima.png */; };
 		8FB1CB641D6FE43600680FCF /* PeopleActingViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 8FB1CB631D6FE43600680FCF /* PeopleActingViewController.m */; };
 		8FB1CB671D6FE70000680FCF /* PeopleActingTableViewCell.m in Sources */ = {isa = PBXBuildFile; fileRef = 8FB1CB661D6FE70000680FCF /* PeopleActingTableViewCell.m */; };
 		8FB1CB6A1D70177300680FCF /* AddPeopleViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 8FB1CB691D70177300680FCF /* AddPeopleViewController.m */; };
@@ -246,6 +245,7 @@
 		8FDC0ED01D5B07FC0048BAEA /* MyViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 8FDC0ECF1D5B07FC0048BAEA /* MyViewController.m */; };
 		8FE205ED1D7D0307003CA8B8 /* MenData.m in Sources */ = {isa = PBXBuildFile; fileRef = 8FE205EC1D7D0307003CA8B8 /* MenData.m */; };
 		8FE205F11D7D7F40003CA8B8 /* SettlementModel.m in Sources */ = {isa = PBXBuildFile; fileRef = 8FE205F01D7D7F40003CA8B8 /* SettlementModel.m */; };
+		8FE52EBC1DC9927A00299ED0 /* myerweima.png in Resources */ = {isa = PBXBuildFile; fileRef = 8FE52EBB1DC9927A00299ED0 /* myerweima.png */; };
 		8FE658561D86350C0088C033 /* WeiLingQuVC.m in Sources */ = {isa = PBXBuildFile; fileRef = 8FE658551D86350C0088C033 /* WeiLingQuVC.m */; };
 		8FE658591D8635310088C033 /* LingQuVC.m in Sources */ = {isa = PBXBuildFile; fileRef = 8FE658581D8635310088C033 /* LingQuVC.m */; };
 		8FE6585D1D863ED10088C033 /* WeiLingQuTableViewCell.m in Sources */ = {isa = PBXBuildFile; fileRef = 8FE6585C1D863ED10088C033 /* WeiLingQuTableViewCell.m */; };
@@ -569,7 +569,6 @@
 		8FA289C51D6BFF6C00232168 /* LogineModel.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = LogineModel.m; sourceTree = "<group>"; };
 		8FA289C91D6C217F00232168 /* ToolClass.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = ToolClass.h; sourceTree = "<group>"; };
 		8FA289CA1D6C217F00232168 /* ToolClass.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = ToolClass.m; sourceTree = "<group>"; };
-		8FACF6C01DB0B6F000F599D3 /* myerweima.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = myerweima.png; sourceTree = "<group>"; };
 		8FB1CB621D6FE43600680FCF /* PeopleActingViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = PeopleActingViewController.h; sourceTree = "<group>"; };
 		8FB1CB631D6FE43600680FCF /* PeopleActingViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = PeopleActingViewController.m; sourceTree = "<group>"; };
 		8FB1CB651D6FE70000680FCF /* PeopleActingTableViewCell.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = PeopleActingTableViewCell.h; sourceTree = "<group>"; };
@@ -740,6 +739,7 @@
 		8FE205EC1D7D0307003CA8B8 /* MenData.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = MenData.m; sourceTree = "<group>"; };
 		8FE205EF1D7D7F40003CA8B8 /* SettlementModel.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = SettlementModel.h; sourceTree = "<group>"; };
 		8FE205F01D7D7F40003CA8B8 /* SettlementModel.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = SettlementModel.m; sourceTree = "<group>"; };
+		8FE52EBB1DC9927A00299ED0 /* myerweima.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = myerweima.png; sourceTree = "<group>"; };
 		8FE658541D86350C0088C033 /* WeiLingQuVC.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = WeiLingQuVC.h; sourceTree = "<group>"; };
 		8FE658551D86350C0088C033 /* WeiLingQuVC.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = WeiLingQuVC.m; sourceTree = "<group>"; };
 		8FE658571D8635310088C033 /* LingQuVC.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = LingQuVC.h; sourceTree = "<group>"; };
@@ -2038,7 +2038,7 @@
 				8F7308E01D7809B200210C06 /* head_pic.png */,
 				8F9CE1211D6D51500080B1FB /* 保存save.png */,
 				8F6CEEAB1D654A1A00187AF7 /* erweima1.png */,
-				8FACF6C01DB0B6F000F599D3 /* myerweima.png */,
+				8FE52EBB1DC9927A00299ED0 /* myerweima.png */,
 				8F6CEEA91D65425D00187AF7 /* picmy.png */,
 				8F9B86D31D63F62C00ABA22C /* pic1.png */,
 				8FDC0E751D5ADAFD0048BAEA /* Supporting Files */,
@@ -2606,7 +2606,7 @@
 				8FDB7B031DA9EE1E00319DA0 /* ios-social-sdk-comment-quick.html in Resources */,
 				8FB951551D6EF3A500980A8B /* ZLThumbnailViewController.xib in Resources */,
 				8FC11F071D98FBB600C1F25A /* InfoPlist.strings in Resources */,
-				8FACF6C11DB0B6F000F599D3 /* myerweima.png in Resources */,
+				8FE52EBC1DC9927A00299ED0 /* myerweima.png in Resources */,
 				8FDB7AF11DA9EE1E00319DA0 /* UMShareEditViewController.xib in Resources */,
 				8FDB7AF91DA9EE1E00319DA0 /* WeiboSDK.bundle in Resources */,
 				8FB9513E1D6EF3A500980A8B /* defaultphoto.png in Resources */,
@@ -3019,7 +3019,7 @@
 				GCC_PREFIX_HEADER = "/Users/Macx/Desktop/万家饮烟109/WanJiaChuiYan/PrefixHeader.pch";
 				HEADER_SEARCH_PATHS = "\"$(SRCROOT)/WanJiaChuiYan/Alipay\"";
 				INFOPLIST_FILE = WanJiaChuiYan/Info.plist;
-				IPHONEOS_DEPLOYMENT_TARGET = 9.1;
+				IPHONEOS_DEPLOYMENT_TARGET = 8.0;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
 				LIBRARY_SEARCH_PATHS = (
 					"$(inherited)",
@@ -3059,7 +3059,7 @@
 				GCC_PREFIX_HEADER = "/Users/Macx/Desktop/万家饮烟109/WanJiaChuiYan/PrefixHeader.pch";
 				HEADER_SEARCH_PATHS = "\"$(SRCROOT)/WanJiaChuiYan/Alipay\"";
 				INFOPLIST_FILE = WanJiaChuiYan/Info.plist;
-				IPHONEOS_DEPLOYMENT_TARGET = 9.1;
+				IPHONEOS_DEPLOYMENT_TARGET = 8.0;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
 				LIBRARY_SEARCH_PATHS = (
 					"$(inherited)",

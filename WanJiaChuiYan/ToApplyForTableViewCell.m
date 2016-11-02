@@ -130,11 +130,11 @@
     .widthIs(50)
     .heightIs(50);
     
-    
+    _titleLabel.numberOfLines=0;
     _titleLabel.sd_layout
     .leftSpaceToView(_leftImage,10)
     .topEqualToView(_leftImage)
-    .heightIs(20);
+    .autoHeightRatio(0);
     [_titleLabel setSingleLineAutoResizeWithMaxWidth:ScreenWidth-100];
     
     _accountLabel.sd_layout
@@ -155,8 +155,6 @@
 //    .heightIs(15);
 //    [_distenceLabel setSingleLineAutoResizeWithMaxWidth:100];
     
-    
-    
 //    _view1.sd_layout
 //    .leftSpaceToView(self.contentView,0)
 //    .topSpaceToView(_leftImage,20)
@@ -168,6 +166,7 @@
 //    .topEqualToView(_view1)
 //    .widthRatioToView(_view1,1)
 //    .heightRatioToView(_view1,1);
+    [self setupAutoHeightWithBottomView:_accountLabel bottomMargin:10];
     
 }
 -(void)setModel:(ToApplyForModel *)model

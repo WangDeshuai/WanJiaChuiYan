@@ -113,7 +113,7 @@
    
 
   
-    NSString * text=@"温馨提示:\n我们把满意键设计的特别小，其它键设计大点希望您提出宝贵的意见";
+    NSString * text=@"完整评论可随机得粮票(每份最高2元):\n我们把满意键设计的小，其它键设计的大，因为期待着您的宝贵意见。";
     
     NSMutableParagraphStyle * paragraphStyle = [[NSMutableParagraphStyle alloc] init];
     [paragraphStyle setLineSpacing:5];
@@ -186,7 +186,7 @@
     _address.text=model.Yaddress;
     _xiangQing.text=model.Yxiangqing;
     _totalLabel.text=[NSString stringWithFormat:@"总计:%@元",model.Ypaymoney];
-//   _contentviews.backgroundColor=[UIColor redColor];
+  // _contentviews.backgroundColor=[UIColor redColor];
     for (int i = 0; i<model.Ymenuarray.count; i++) {
         NSDictionary * dic =model.Ymenuarray[i];
         /*
@@ -294,7 +294,12 @@
         [_tucaoArray addObject:weidaocha];
         [_fenShuArray addObject:fenshu];
         [_manyiArray addObject:manyi];
-        _contentviews.sd_layout.heightIs( (0+35+60)*i+10);
+        if (model.Ymenuarray.count==2) {
+            _contentviews.sd_layout.heightIs( (0+35+60+30)*i+10);
+        }else{
+             _contentviews.sd_layout.heightIs( (0+35+60)*i+10);
+        }
+       
     }
        
 }

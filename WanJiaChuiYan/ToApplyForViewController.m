@@ -105,7 +105,17 @@
 -(CGFloat)tableView:(UITableView *)tableView heightForRowAtIndexPath:(NSIndexPath *)indexPath
 {
     
-    return 80;
+   // return 80;
+    return [_tableView cellHeightForIndexPath:indexPath model:_dataArray[indexPath.row]keyPath:@"model" cellClass:[ToApplyForTableViewCell class] contentViewWidth:[self  cellContentViewWith]];
+}
+- (CGFloat)cellContentViewWith
+{
+    CGFloat width = [UIScreen mainScreen].bounds.size.width;
+    // 适配ios7
+    if ([UIApplication sharedApplication].statusBarOrientation != UIInterfaceOrientationPortrait && [[UIDevice currentDevice].systemVersion floatValue] < 8) {
+        width = [UIScreen mainScreen].bounds.size.height;
+    }
+    return width;
 }
 #pragma mark --点赞
 -(void)zan:(UIButton*)btn{

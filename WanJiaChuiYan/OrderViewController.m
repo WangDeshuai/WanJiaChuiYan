@@ -97,7 +97,7 @@
         }
         [self.view addSubview:_bgScrollView];
         [self tableviewData];//查询附近小站的网络数据
-        //    [self quiteCaiDan];//查询菜单的网络数据
+           // [self quiteCaiDan];//查询菜单的网络数据
         [self Creatinit];//初始化第一个cell
         [self CreatArr];//数组初始化
         [self initView1];//第一个Cell
@@ -128,7 +128,9 @@
         
         NSString * code =[NSString stringWithFormat:@"%@",[dic objectForKey:@"code"]];
         if ([code isEqualToString:@"1"]) {
-            [self quiteCaiDan];//查询菜单的网络数据
+            [_bigArray removeAllObjects];
+            [_pickerView reloadAllComponents];
+           [self quiteCaiDan];//查询菜单的网络数据
         }
         
         if ([dicConten objectForKey:@"binded_Station"] ==[NSNull null]) {
@@ -661,11 +663,12 @@
     return str;
 }
 -(UIView*)pickerView:(UIPickerView *)pickerView viewForRow:(NSInteger)row forComponent:(NSInteger)component reusingView:(UIView *)view{
-//    if (!view) {
-//        view=[[UIView alloc]init];
-//    }
+    if (!view) {
+        view=[[UIView alloc]init];
+    }
     UILabel * text =[[UILabel alloc]initWithFrame:CGRectMake(0, 0, self.view.frame.size.width/3.5, 40)];
     text.textAlignment=1;
+   // text.backgroundColor=[UIColor redColor];
     text.tag=11;
     NSArray * arr =_bigArray[component];
     OrderTableViewModel * md=arr[row%arr.count];
