@@ -396,18 +396,18 @@
     [distance setSingleLineAutoResizeWithMaxWidth:70];
   
     //label1（定位的具体城市）
-  
     label1.font=[UIFont systemFontOfSize:14];
     label1.textColor=[UIColor blackColor];
     label1.textAlignment=0;
     label1.alpha=.7;
+    label1.numberOfLines=0;
     label1.text=md.diZhi;//@"广安大街安侨商务";//换成网络数据
      [view1 sd_addSubviews:@[label1]];
     label1.sd_layout
     .leftSpaceToView(image1,5)
     .topEqualToView(image1)
-    .heightRatioToView(image1,1)
-    .rightSpaceToView(distance,5);
+    .rightSpaceToView(distance,5)
+    .autoHeightRatio(0);
     
     //image2
     
@@ -415,7 +415,7 @@
     [view1 sd_addSubviews:@[image2]];
     image2.sd_layout
     .leftEqualToView(image1)
-    .topSpaceToView(image1,10)
+    .topSpaceToView(label1,10)
     .widthIs(26/2)
     .heightIs(24/2);
     //label2(最近一次用过的取餐点)

@@ -145,6 +145,10 @@
                   [self CreatTableView];
                  [LCProgressHUD showMessage:[dic objectForKey:@"msg"]];
                  //[self.navigationController popViewControllerAnimated:YES];
+             }else{
+                 //[swi2 setOn:NO];
+                 [self.navigationController popViewControllerAnimated:YES];
+                 [LCProgressHUD showMessage:[dic objectForKey:@"msg"]];
              }
          } error:^(NSError *error) {
              

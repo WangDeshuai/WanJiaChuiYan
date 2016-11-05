@@ -20,6 +20,7 @@
 #import "ContactKeFuViewController.h"
 #import "RecruitmentViewController.h"
 #import "MyQuCanDianVC.h"
+#import "JPUSHService.h"
 @interface MyViewController ()<UITableViewDelegate,UITableViewDataSource,UIImagePickerControllerDelegate,UINavigationControllerDelegate>
 {
     UILabel * nameLabel;
@@ -496,6 +497,11 @@
     _tableView.tableHeaderView= [self TableViewHeadView];
     [_tableView reloadData];
     [self StarArray];//掉这个的目的是 退出后返回1个区，及最原始状态
+    
+    [JPUSHService setTags:[NSSet set] alias:@"" fetchCompletionHandle:^(int iResCode, NSSet *iTags, NSString *iAlias) {
+        NSLog(@"rescode: %d, \ntags: %@, \nalias: %@\n", iResCode, iTags, iAlias);
+    }];
+
 }
 
 #pragma mark --万家厨房或者小站

@@ -7,7 +7,7 @@
 //
 
 #import "ToolClass.h"
-
+#import "JPUSHService.h"
 @implementation ToolClass
 +(BOOL)isLogin{
     NSString * str =[[NSUserDefaults standardUserDefaults]objectForKey:@"username"];
@@ -26,18 +26,28 @@
     if (dic==nil) {
        type=@"1";
         NSLog(@"是空的");
+
     }else{
         type=[NSString stringWithFormat:@"%@",[dic objectForKey:@"user_type"]];
+        NSLog(@"别名是%@",[dic objectForKey:@"regist_id"]);
+        NSLog(@"标签%@",type);
+       NSSet * set = [[NSSet alloc] initWithObjects:type, nil];
+        [JPUSHService setTags:set alias:[NSString stringWithFormat:@"%@",[dic objectForKey:@"regist_id"]] fetchCompletionHandle:^(int iResCode, NSSet *iTags, NSString *iAlias) {
+            NSLog(@"rescode: %d, \ntags: %@, \nalias: %@\n", iResCode, iTags, iAlias);
+        }];
+        
     }
     
-//    if ([type isEqualToString:@"2"]) {
-//        //1是普通用户，2是万家厨房 3炊烟小站 4副站长
-//        return @"2";
-//    }
 
+   
     return type;
 }
-
+-(void)tagsAliasCallback:(int)iResCode
+                    tags:(NSSet*)tags
+                   alias:(NSString*)alias
+{
+    NSLog(@"rescode: %d, \ntags: %@, \nalias: %@\n", iResCode, tags , alias);
+}
 
 #pragma mark --判断是否是万家厨房或者饮烟小站
 +(BOOL)isWanJiaAndYinYan{

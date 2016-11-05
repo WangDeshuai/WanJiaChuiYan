@@ -305,7 +305,6 @@
 }
  //价格贵
 -(void)tuijian:(UIButton*)btn{
-   // NSLog(@"小站ID>>%@",_model.YxiaoZhanID);
     UIButton* weidao=  _tucaoArray[btn.tag];
     weidao.selected=NO;
     UIButton* fenshu=  _fenShuArray[btn.tag];
@@ -315,9 +314,7 @@
     btn.selected=YES;
     NSDictionary * dic =_model.Ymenuarray[btn.tag];
     [Engine pingjiaMenuDingDanHao:_bianHao.text ChuID:[dic objectForKey:@"kitchen_id"] XiaoZhanID:_model.YxiaoZhanID MenuID:[dic objectForKey:@"menu_id"] tuiJian:@"3" success:^(NSDictionary *dic) {
-        
-        [LCProgressHUD showMessage:[dic objectForKey:@"msg"]];
-        
+        self.jiageguiBlock(dic);
     } error:^(NSError *error) {
         
     }];
@@ -326,18 +323,16 @@
  //味道差
 -(void)tucao:(UIButton*)btn{
   
-   
     UIButton* jiage=  _tuijianArray[btn.tag];
     jiage.selected=NO;
     UIButton* fenshu=  _fenShuArray[btn.tag];
     fenshu.selected=NO;
     UIButton* manyi=  _manyiArray[btn.tag];
     manyi.selected=NO;
-    
     NSDictionary * dic =_model.Ymenuarray[btn.tag];
     btn.selected=YES;
     [Engine pingjiaMenuDingDanHao:_bianHao.text ChuID:[dic objectForKey:@"kitchen_id"] XiaoZhanID:_model.YxiaoZhanID MenuID:[dic objectForKey:@"menu_id"] tuiJian:@"4" success:^(NSDictionary *dic) {
-         [LCProgressHUD showMessage:[dic objectForKey:@"msg"]];
+        self.weidaochaBlock(dic);
     } error:^(NSError *error) {
         
     }];
@@ -356,9 +351,7 @@
     btn.selected=YES;
     NSDictionary * dic =_model.Ymenuarray[btn.tag];
     [Engine pingjiaMenuDingDanHao:_bianHao.text ChuID:[dic objectForKey:@"kitchen_id"] XiaoZhanID:_model.YxiaoZhanID MenuID:[dic objectForKey:@"menu_id"] tuiJian:@"2" success:^(NSDictionary *dic) {
-        
-        [LCProgressHUD showMessage:[dic objectForKey:@"msg"]];
-        
+        self.fenliangshaoBlock(dic);
     } error:^(NSError *error) {
         
     }];
@@ -373,11 +366,10 @@
     UIButton* fenshu=  _fenShuArray[btn.tag];
     fenshu.selected=NO;
     btn.selected=YES;
+    
     NSDictionary * dic =_model.Ymenuarray[btn.tag];
     [Engine pingjiaMenuDingDanHao:_bianHao.text ChuID:[dic objectForKey:@"kitchen_id"] XiaoZhanID:_model.YxiaoZhanID MenuID:[dic objectForKey:@"menu_id"] tuiJian:@"1" success:^(NSDictionary *dic) {
-        
-        [LCProgressHUD showMessage:[dic objectForKey:@"msg"]];
-        
+        self.manyiBlock(dic);
     } error:^(NSError *error) {
         
     }];

@@ -423,9 +423,16 @@
                     [self.navigationController popToRootViewControllerAnimated:YES];
                 }else{
                     [self deleateGouWuChe];
+                    UIAlertController * actionView=[UIAlertController alertControllerWithTitle:@"温馨提示" message:@"购买成功\n请前往您的订单查看" preferredStyle:UIAlertControllerStyleAlert];
+                    [self presentViewController:actionView animated:YES completion:nil];
                    
+                    UIAlertAction * action2 =[UIAlertAction actionWithTitle:@"确定" style:UIAlertActionStyleDefault handler:^(UIAlertAction * _Nonnull action) {
+                        [self.navigationController popToRootViewControllerAnimated:YES];
+                    }];
+                    [actionView addAction:action2];
+                   // [LCProgressHUD showMessage:@"购买成功"];
                 }
-                [self.navigationController popToRootViewControllerAnimated:YES];
+                
             }else{
                
             }
@@ -544,12 +551,12 @@
             NSLog(@"支付结果>>>%@",resultDic);
             if ([[resultDic objectForKey:@"resultStatus"] isEqualToString:@"9000"]) {
                 //9000为支付成功
-                UIAlertController * alercon =[UIAlertController alertControllerWithTitle:@"温馨提示" message:@"充值成功，请重新登录" preferredStyle:UIAlertControllerStyleAlert];
-                UIAlertAction * que =[UIAlertAction actionWithTitle:@"取消" style:UIAlertActionStyleDefault handler:^(UIAlertAction * _Nonnull action) {
-                    
-                }];
-                [alercon addAction:que];
-                [self presentViewController:alercon animated:YES completion:nil];
+//                UIAlertController * alercon =[UIAlertController alertControllerWithTitle:@"温馨提示" message:@"充值成功，请重新登录" preferredStyle:UIAlertControllerStyleAlert];
+//                UIAlertAction * que =[UIAlertAction actionWithTitle:@"取消" style:UIAlertActionStyleDefault handler:^(UIAlertAction * _Nonnull action) {
+//                    
+//                }];
+//                [alercon addAction:que];
+//                [self presentViewController:alercon animated:YES completion:nil];
             }
         }];
     }

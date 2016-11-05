@@ -130,7 +130,65 @@
     LingQuTableViewCell * cell =[LingQuTableViewCell cellWithTableView:tableView CellID:cellid index:indexPath];
     MyOrderModel * md=_dataArray[indexPath.row];
     cell.model=md;
-    
+    //满意
+    cell.manyiBlock=^(NSDictionary*dic){
+        if ([dic objectForKey:@"content"]==[NSNull null]) {
+            
+        }else{
+            UIAlertController * actionView=[UIAlertController alertControllerWithTitle:@"温馨提示" message:[dic objectForKey:@"msg"] preferredStyle:UIAlertControllerStyleAlert];
+            [self presentViewController:actionView animated:YES completion:nil];
+            UIAlertAction * action1 =[UIAlertAction actionWithTitle:@"取消" style:UIAlertActionStyleDefault handler:nil];
+            UIAlertAction * action2 =[UIAlertAction actionWithTitle:@"确定" style:UIAlertActionStyleDefault handler:nil];
+            [actionView addAction:action1];
+            [actionView addAction:action2];
+        }
+    };
+    //味道差
+    cell.weidaochaBlock=^(NSDictionary*dic){
+        NSLog(@"来味道差了");
+        if ([dic objectForKey:@"content"]==[NSNull null]) {
+            
+        }else{
+            UIAlertController * actionView=[UIAlertController alertControllerWithTitle:@"温馨提示" message:[dic objectForKey:@"msg"] preferredStyle:UIAlertControllerStyleAlert];
+            [self presentViewController:actionView animated:YES completion:nil];
+            UIAlertAction * action1 =[UIAlertAction actionWithTitle:@"取消" style:UIAlertActionStyleDefault handler:nil];
+            UIAlertAction * action2 =[UIAlertAction actionWithTitle:@"确定" style:UIAlertActionStyleDefault handler:nil];
+            [actionView addAction:action1];
+            [actionView addAction:action2];
+        }
+
+    };
+    //价格贵
+    cell.jiageguiBlock=^(NSDictionary*dic){
+        NSLog(@"价格贵了");
+        if ([dic objectForKey:@"content"]==[NSNull null]) {
+            
+        }else{
+            UIAlertController * actionView=[UIAlertController alertControllerWithTitle:@"温馨提示" message:[dic objectForKey:@"msg"] preferredStyle:UIAlertControllerStyleAlert];
+            [self presentViewController:actionView animated:YES completion:nil];
+            UIAlertAction * action1 =[UIAlertAction actionWithTitle:@"取消" style:UIAlertActionStyleDefault handler:nil];
+            UIAlertAction * action2 =[UIAlertAction actionWithTitle:@"确定" style:UIAlertActionStyleDefault handler:nil];
+            [actionView addAction:action1];
+            [actionView addAction:action2];
+        }
+
+    };
+    //分量少
+    cell.fenliangshaoBlock=^(NSDictionary*dic){
+        NSLog(@"分量少");
+        if ([dic objectForKey:@"content"]==[NSNull null]) {
+            
+        }else{
+            UIAlertController * actionView=[UIAlertController alertControllerWithTitle:@"温馨提示" message:[dic objectForKey:@"msg"] preferredStyle:UIAlertControllerStyleAlert];
+            [self presentViewController:actionView animated:YES completion:nil];
+            UIAlertAction * action1 =[UIAlertAction actionWithTitle:@"取消" style:UIAlertActionStyleDefault handler:nil];
+            UIAlertAction * action2 =[UIAlertAction actionWithTitle:@"确定" style:UIAlertActionStyleDefault handler:nil];
+            [actionView addAction:action1];
+            [actionView addAction:action2];
+        }
+
+    };
+
    
        return cell;
 }

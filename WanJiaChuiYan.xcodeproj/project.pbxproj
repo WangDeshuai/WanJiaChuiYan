@@ -3008,7 +3008,7 @@
 				CODE_SIGN_ENTITLEMENTS = WanJiaChuiYan/WanJiaChuiYan.entitlements;
 				CODE_SIGN_IDENTITY = "iPhone Distribution: Hubei Dasso Network Technology Co., Ltd. (KX9SUR3RFH)";
 				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "iPhone Developer";
-				DEVELOPMENT_TEAM = KX9SUR3RFH;
+				DEVELOPMENT_TEAM = "";
 				ENABLE_BITCODE = NO;
 				FRAMEWORK_SEARCH_PATHS = (
 					"$(inherited)",
@@ -3048,7 +3048,7 @@
 				CODE_SIGN_ENTITLEMENTS = WanJiaChuiYan/WanJiaChuiYan.entitlements;
 				CODE_SIGN_IDENTITY = "iPhone Distribution: Hubei Dasso Network Technology Co., Ltd. (KX9SUR3RFH)";
 				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "iPhone Developer";
-				DEVELOPMENT_TEAM = KX9SUR3RFH;
+				DEVELOPMENT_TEAM = "";
 				ENABLE_BITCODE = NO;
 				FRAMEWORK_SEARCH_PATHS = (
 					"$(inherited)",

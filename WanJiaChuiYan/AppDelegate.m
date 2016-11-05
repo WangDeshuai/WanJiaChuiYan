@@ -281,9 +281,10 @@ didRegisterForRemoteNotificationsWithDeviceToken:(NSData *)deviceToken {
             case WXSuccess:{
                 strMsg = @"支付结果：成功！";
                 NSLog(@"支付成功－PaySuccess，retcode = %d", resp.errCode);
+                 [LCProgressHUD showMessage:@"购买成功"];
                 [self deleateGouWuChe];
                 
-                [LCProgressHUD showMessage:@"支付成功"];
+               
                 break;
             }
             default:{

@@ -18,6 +18,8 @@
 #import "CityViewController.h"
 #import "MyXiaoZhanViewController.h"
 #import "WanJiaChuFangViewController.h"
+#import "JPUSHService.h"
+
 #define Fount 15
 #define corol [UIColor colorWithRed:3/255.0 green:180/255.0 blue:15/255.0 alpha:1]
 @interface HomeViewController ()
@@ -49,6 +51,12 @@
 @implementation HomeViewController
 -(void)viewWillAppear:(BOOL)animated
 {
+    
+//    [JPUSHService setTags:nil alias:@"2" fetchCompletionHandle:^(int iResCode, NSSet *iTags, NSString *iAlias) {
+//        NSLog(@"哈哈rescode: %d, \ntags: %@, \nalias: %@\n", iResCode, iTags, iAlias);
+//    }];
+
+    
       NSMutableDictionary *dic= [XYString duquPlistWenJianPlistName:@"cityDingWei"];
     if (dic==nil) {
         //没有记录说明是第一次进来d的
