@@ -17,7 +17,7 @@
 #import "TableWareVC.h"
 #import "UserQuCanModel.h"
 #import "YeJiViewController.h"
-
+#import "TextFiledOneVC.h"
 @interface MyXiaoZhanViewController ()<UITableViewDelegate,UITableViewDataSource>
 {
     ChuFangMessageModel * model;
@@ -82,10 +82,10 @@
 
 
 -(void)CreatArray{
-    NSArray * arr1 =@[@"小站编号"];
+    NSArray * arr1 =@[@"小站编号",@"小站自编辑广告语"];
     NSArray * arr2 =@[@"小站信息",@"收饭收菜",@"餐具订单"];
     NSArray * arr3 =@[@"开启用户取餐",@"启用备用站长",@"查看业绩"];
-    NSArray * image1 =@[@"kitchen_bianhao"];
+    NSArray * image1 =@[@"kitchen_bianhao",@"kitchen_guanggao"];
     NSArray * image2=@[@"kitchen_message",@"kitchen_dingdan ",@"kitchen_today12"];
     NSArray * image3=@[@"kitchen_message",@"kitchen_dingdan ",@"yeji"];
     _nameArray=[[NSMutableArray alloc]initWithObjects:arr1,arr2,arr3, nil];
@@ -117,9 +117,14 @@
     NSString *CellIdentifier = [NSString stringWithFormat:@"Cell%ld%ld", (long)[indexPath section], (long)[indexPath row]];//以indexPath来唯
     WanJiaChuFangTableViewCell * cell =[WanJiaChuFangTableViewCell cellWithTableView:tableView CellID:CellIdentifier];
     if (indexPath.section==0) {
-        cell.arrowImage.hidden=YES;
-        cell.dingDanLab.hidden=NO;
-        cell.dingDanLab.text=model.BianHaoName;
+        if (indexPath.row==0) {
+            cell.arrowImage.hidden=YES;
+            cell.dingDanLab.hidden=NO;
+            cell.dingDanLab.text=model.BianHaoName;
+        }else{
+              cell.arrowImage.hidden=NO;
+        }
+       
     }else if(indexPath.section==1){
         
     }else{
@@ -155,7 +160,16 @@
 }
 -(void)tableView:(UITableView *)tableView didSelectRowAtIndexPath:(NSIndexPath *)indexPath
 {
-     if (indexPath.section==1){
+    if (indexPath.section==0) {
+        if (indexPath.row==1)
+        {
+           //小站自编辑广告语
+            TextFiledOneVC * textStr =[TextFiledOneVC new];
+            [self.navigationController pushViewController:textStr animated:YES];
+        }
+    }
+    
+   else if (indexPath.section==1){
          if (indexPath.row==0) {
              //小站信息
              MyXiaoZhanMessage * vc =[MyXiaoZhanMessage new];

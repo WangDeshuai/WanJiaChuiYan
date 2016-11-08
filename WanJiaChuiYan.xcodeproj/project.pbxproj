@@ -22,6 +22,7 @@
 		8F253BE01D7C20C600EA1D20 /* ToApplyForViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 8F253BDF1D7C20C600EA1D20 /* ToApplyForViewController.m */; };
 		8F253BE41D7C22EA00EA1D20 /* ToApplyForTableViewCell.m in Sources */ = {isa = PBXBuildFile; fileRef = 8F253BE31D7C22EA00EA1D20 /* ToApplyForTableViewCell.m */; };
 		8F253BE71D7C330F00EA1D20 /* BuyTablewareViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 8F253BE61D7C330F00EA1D20 /* BuyTablewareViewController.m */; };
+		8F317B011DD16FC800312608 /* TextFiledOneVC.m in Sources */ = {isa = PBXBuildFile; fileRef = 8F317B001DD16FC800312608 /* TextFiledOneVC.m */; };
 		8F5342571D88D53900D52B9B /* MyOrderModel.m in Sources */ = {isa = PBXBuildFile; fileRef = 8F5342561D88D53900D52B9B /* MyOrderModel.m */; };
 		8F595B851DC05C1400230AC8 /* jpush-ios-2.2.0.a in Frameworks */ = {isa = PBXBuildFile; fileRef = 8F595B831DC05C1400230AC8 /* jpush-ios-2.2.0.a */; };
 		8F595B881DC05C6300230AC8 /* CoreFoundation.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 8F595B871DC05C6300230AC8 /* CoreFoundation.framework */; };
@@ -341,6 +342,8 @@
 		8F253BE51D7C330F00EA1D20 /* BuyTablewareViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = BuyTablewareViewController.h; sourceTree = "<group>"; };
 		8F253BE61D7C330F00EA1D20 /* BuyTablewareViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = BuyTablewareViewController.m; sourceTree = "<group>"; };
 		8F2B861F1DC03959000F95C5 /* WanJiaChuiYan.entitlements */ = {isa = PBXFileReference; lastKnownFileType = text.plist.entitlements; path = WanJiaChuiYan.entitlements; sourceTree = "<group>"; };
+		8F317AFF1DD16FC800312608 /* TextFiledOneVC.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = TextFiledOneVC.h; sourceTree = "<group>"; };
+		8F317B001DD16FC800312608 /* TextFiledOneVC.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = TextFiledOneVC.m; sourceTree = "<group>"; };
 		8F5342551D88D53900D52B9B /* MyOrderModel.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = MyOrderModel.h; sourceTree = "<group>"; };
 		8F5342561D88D53900D52B9B /* MyOrderModel.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = MyOrderModel.m; sourceTree = "<group>"; };
 		8F595B831DC05C1400230AC8 /* jpush-ios-2.2.0.a */ = {isa = PBXFileReference; lastKnownFileType = archive.ar; path = "jpush-ios-2.2.0.a"; sourceTree = "<group>"; };
@@ -1089,6 +1092,15 @@
 				8F253BDF1D7C20C600EA1D20 /* ToApplyForViewController.m */,
 			);
 			name = "申请中";
+			sourceTree = "<group>";
+		};
+		8F317AFE1DD1629200312608 /* 小站自编辑广告语 */ = {
+			isa = PBXGroup;
+			children = (
+				8F317AFF1DD16FC800312608 /* TextFiledOneVC.h */,
+				8F317B001DD16FC800312608 /* TextFiledOneVC.m */,
+			);
+			name = "小站自编辑广告语";
 			sourceTree = "<group>";
 		};
 		8F5342581D88D53D00D52B9B /* 我的订单 */ = {
@@ -2367,6 +2379,7 @@
 			isa = PBXGroup;
 			children = (
 				8F253BC21D7A727900EA1D20 /* 主小站 */,
+				8F317AFE1DD1629200312608 /* 小站自编辑广告语 */,
 				8F253BBD1D7A722200EA1D20 /* 小站信息 */,
 				8F253BC61D7A72B100EA1D20 /* 收饭收菜 */,
 				8FE6586B1D8674C20088C033 /* 餐具订单 */,
@@ -2695,6 +2708,7 @@
 				8F8B589A1D68BB1600D14D15 /* MenuModel.m in Sources */,
 				8F253BD31D7A939600EA1D20 /* UsetQuCanViewController.m in Sources */,
 				8FE658591D8635310088C033 /* LingQuVC.m in Sources */,
+				8F317B011DD16FC800312608 /* TextFiledOneVC.m in Sources */,
 				8F7A88721D5C098300CFF6D7 /* AFURLConnectionOperation.m in Sources */,
 				8F9B86D81D6409BB00ABA22C /* OrderTableViewCell.m in Sources */,
 				8FE659DB1D86B23E0088C033 /* DataVerifier.m in Sources */,

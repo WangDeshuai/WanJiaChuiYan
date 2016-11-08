@@ -17,6 +17,7 @@
 @property(nonatomic,copy)NSString * quCanID;
 @property(nonatomic,copy)NSString * imageName;
 @property(nonatomic,copy)NSString * name;
+@property(nonatomic,copy)NSString* guangGaoYu;
 -(id)initWithDic:(NSDictionary*)dic;
 //菜品名字的
 @property(nonatomic,copy)NSString * menu_id;

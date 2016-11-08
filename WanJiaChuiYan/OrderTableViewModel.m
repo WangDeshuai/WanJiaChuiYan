@@ -19,7 +19,12 @@
          _imageName=[NSString stringWithFormat:@"%@",[dic objectForKey:@"station_image"]];
          _name=[NSString stringWithFormat:@"%@",[dic objectForKey:@"name"]];
          _quCanID=[NSString stringWithFormat:@"%@",[dic objectForKey:@"id"]];
-        
+        if ([dic objectForKey:@"advertisement"]==[NSNull null])
+        {
+            _guangGaoYu=@"";
+        }else{
+            _guangGaoYu=[dic objectForKey:@"advertisement"];
+        }
     NSString* jl=[NSString stringWithFormat:@"%@",[dic objectForKey:@"distance"]];
         int juli = [jl intValue];
         if (juli>=1000) {

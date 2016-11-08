@@ -28,6 +28,9 @@
     UIImageView * image2;
     UILabel * label2;
     UITapGestureRecognizer *mTap;
+    UIView * bggview;
+    UILabel * paomadeng;
+    UIImageView * image3;
 }
 @property(nonatomic,retain)NSMutableArray * priceArray;
 @property(nonatomic,retain)NSMutableArray *MenuID;

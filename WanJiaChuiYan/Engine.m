@@ -1385,4 +1385,43 @@
         [LCProgressHUD showFailure:@"查看业绩(小站和厨房)退出请检查网络连接"];
     }];
 }
+#pragma mark --66查看小站宣传语
++(void)ChaKanXiaoZhanXuanChuansuccess:(SuccessBlock)aSuccess error:(ErrorBlock)aError{
+    NSString * urlStr =[NSString stringWithFormat:@"%@station/app_qryStationAdvertisement.action",SERVICE];
+    NSLog(@"查看小站宣传语%@",urlStr);
+    AFHTTPRequestOperationManager * manager =[AFHTTPRequestOperationManager manager];
+    NSMutableDictionary *parameter=[NSMutableDictionary new];
+    [parameter setObject:@"ios" forKey:@"osType"];
+    [parameter setObject:[[NSUserDefaults standardUserDefaults]objectForKey:@"zhuceid"] forKey:@"regist_id"];
+    [manager POST:urlStr parameters:parameter success:^(AFHTTPRequestOperation *operation, id responseObject) {
+        NSData *data = [NSJSONSerialization dataWithJSONObject:responseObject options:NSJSONWritingPrettyPrinted error:nil];
+        NSString *str = [[NSString alloc]initWithData:data encoding:NSUTF8StringEncoding];
+        NSLog(@"查看小站宣传语%@",str);
+        
+        aSuccess(responseObject);
+    } failure:^(AFHTTPRequestOperation *operation, NSError *error) {
+        [LCProgressHUD showFailure:@"查看小站宣传语请检查网络连接"];
+    }];
+
+}
+#pragma mark --67更新小站宣传语
++(void)gengXinGuangGao:(NSString *)str success:(SuccessBlock)aSuccess error:(ErrorBlock)aError{
+    NSString * urlStr =[NSString stringWithFormat:@"%@station/app_updateStationAdvertisement.action",SERVICE];
+   
+    AFHTTPRequestOperationManager * manager =[AFHTTPRequestOperationManager manager];
+    NSMutableDictionary *parameter=[NSMutableDictionary new];
+    [parameter setObject:@"ios" forKey:@"osType"];
+    [parameter setObject:[[NSUserDefaults standardUserDefaults]objectForKey:@"zhuceid"] forKey:@"regist_id"];
+    [parameter setObject:str forKey:@"advertisement"];
+    [manager POST:urlStr parameters:parameter success:^(AFHTTPRequestOperation *operation, id responseObject) {
+        NSData *data = [NSJSONSerialization dataWithJSONObject:responseObject options:NSJSONWritingPrettyPrinted error:nil];
+        NSString *str = [[NSString alloc]initWithData:data encoding:NSUTF8StringEncoding];
+        NSLog(@"更新小站宣传语%@",str);
+        
+        aSuccess(responseObject);
+    } failure:^(AFHTTPRequestOperation *operation, NSError *error) {
+        [LCProgressHUD showFailure:@"更新小站宣传语请检查网络连接"];
+    }];
+
+}
 @end

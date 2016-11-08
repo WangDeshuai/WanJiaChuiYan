@@ -140,7 +140,7 @@
 }
 -(void)button{
     //搜索附近家厨，更新午餐标准，
-    NSString * str= [NSString stringWithFormat:@"午餐搜索，不一样的烟火。新用户注册填写邀请码%@得3元粮票",_dataArray[0]];
+    NSString * str= [NSString stringWithFormat:@"专业掌上午餐，专注一碗好米。新用户注册填写邀请码%@得3元粮票",_dataArray[0]];
     //分享给好友时的标题与连接
     [UMSocialData defaultData].extConfig.title = @"万家炊烟";
     [UMSocialData defaultData].extConfig.wechatSessionData.url = @"https://itunes.apple.com/us/app/wan-jia-chui-yan/id1163591027?mt=8";

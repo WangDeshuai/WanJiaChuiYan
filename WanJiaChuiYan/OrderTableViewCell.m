@@ -15,6 +15,8 @@
 @property(nonatomic,retain)UILabel * label1;//定位地点
 @property(nonatomic,retain)UILabel * label2;//点击更换取餐点
 @property(nonatomic,retain)UILabel * distance;//距离
+@property(nonatomic,retain)UIImageView * image3;//广告语
+@property(nonatomic,retain)UILabel * labelgg;//广告语
 
 
 @end
@@ -50,14 +52,18 @@
     _label1=[UILabel new];
     _label2=[UILabel new];
     _distance=[UILabel new];
+    _image3=[UIImageView new];
+    _labelgg=[UILabel new];
     _changeBtn=[UIButton buttonWithType:UIButtonTypeCustom];
     
     _nameLabel.font=[UIFont systemFontOfSize:16];
     _label1.font=[UIFont systemFontOfSize:14];
     _distance.font=[UIFont systemFontOfSize:15];
     _label2.font=[UIFont systemFontOfSize:14];
+    _labelgg.font=[UIFont systemFontOfSize:14];
     _label1.alpha=.8;
     _label2.alpha=.6;
+    _labelgg.alpha=.8;
     //固定值
     // _imageLeft.image=[UIImage imageNamed:@"pic1"];
     _image1.image=[UIImage imageNamed:@"adress"];
@@ -65,10 +71,11 @@
     // _label1.text=@"广安大街安侨商务";
      _image2.image=[UIImage imageNamed:@"shop"];
      _label2.text=@"点击可更换为取餐点";
+     _image3.image=[UIImage imageNamed:@"kitchen_guanggao"];
     [_changeBtn setBackgroundImage:[UIImage imageNamed:@"change_button"] forState:0];
     
     
-    [self.contentView sd_addSubviews:@[_imageLeft,_nameLabel,_image1,_image2,_label1,_label2,_distance,_changeBtn]];
+    [self.contentView sd_addSubviews:@[_imageLeft,_nameLabel,_image1,_image2,_label1,_label2,_distance,_changeBtn,_image3,_labelgg]];
     [self framCreat];
 }
 #pragma mark --创建坐标
@@ -96,7 +103,7 @@
     //image1(定位)
     _image1.sd_layout
     .leftEqualToView(_nameLabel)
-    .topSpaceToView(_nameLabel,10)
+    .topSpaceToView(_nameLabel,5)
     .widthIs(26/2)
     .heightIs(34/2);
     //label1
@@ -105,16 +112,27 @@
     .topEqualToView(_image1)
     .heightRatioToView(_image1,1)
     .rightSpaceToView(bgView,5);
+    //image3
+    _image3.sd_layout
+    .leftEqualToView(_image1)
+    .topSpaceToView(_image1,5)
+    .widthIs(14)
+    .heightIs(14);
+    
     //image2（更换）
     _image2.sd_layout
     .leftEqualToView(_image1)
-    .topSpaceToView(_image1,10)
+    .topSpaceToView(_image3,5)
     .widthIs(26/2)
     .heightIs(24/2);
+   
+   
+    
+    
     //立即更换
     _changeBtn.sd_layout
     .rightEqualToView(_distance)
-    .centerYEqualToView(_image2)
+    .centerYEqualToView(_image3)
     .widthIs(133/2)
     .heightIs(40/2);
     
@@ -126,7 +144,11 @@
     .heightRatioToView(_image2,1)
     .rightSpaceToView(_changeBtn,5);
    
-    
+    _labelgg.sd_layout
+    .leftEqualToView(_label1)
+    .centerYEqualToView(_image3)
+    .heightIs(20);
+    [_labelgg setSingleLineAutoResizeWithMaxWidth:200];
     
 }
 - (void)awakeFromNib {
@@ -145,22 +167,12 @@
 {
     _model=model;
 
-   // [_imageLeft setImageWithURL:[NSURL URLWithString:model.imageName] placeholderImage:[UIImage imageNamed:@"icon"]];
-    
-    [_imageLeft setBackgroundImageForState:UIControlStateNormal withURL:[NSURL URLWithString:model.imageName] placeholderImage:[UIImage imageNamed:@"icon1"]];
+   [_imageLeft setBackgroundImageForState:UIControlStateNormal withURL:[NSURL URLWithString:model.imageName] placeholderImage:[UIImage imageNamed:@"icon1"]];
     
     _nameLabel.text=model.name;
     _label1.text=model.diZhi;
+    _labelgg.text=model.guangGaoYu;
     _distance.text=model.juLi;
-//    int distance;
-//    int juLi =[model.juLi intValue];
-//    if (juLi>=1000) {
-//       distance=juLi/1000;
-//        _distance.text=[NSString stringWithFormat:@"%dkm",distance];
-//    }else{
-//       distance=juLi;
-//        _distance.text=[NSString stringWithFormat:@"%dm",distance];
-//    }
 }
 #pragma mark -- 重新cell frame
 -(void)setFrame:(CGRect)frame

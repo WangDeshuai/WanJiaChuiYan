@@ -114,7 +114,6 @@
    // [LCProgressHUD showLoading:@"数据加载中..."];
     NSMutableDictionary * cityName =[XYString duquPlistWenJianPlistName:@"cityDingWei"];
     NSMutableDictionary * cityZuoBiao =[XYString duquPlistWenJianPlistName:@"cityDingWeiZuoBiao"];
-    //|| cityZuoBiao==nil
     if (cityName==nil ) {
         [LCProgressHUD showMessage:@"请先选择地区"];
         return;
@@ -287,6 +286,8 @@
      view1 =[UIView new];
      imageLeft=[UIButton new];
      btnRight=[UIButton buttonWithType:UIButtonTypeCustom];
+   
+   
     iphoneFade =[[CopyiPhoneFadeView alloc]initWithFrame:CGRectMake((100*103/196-100*103/196/2)/2, 1, 100*103/196/2, 80)];
      nameLabel =[UILabel new];
     image1 =[[UIImageView alloc]init];
@@ -294,6 +295,9 @@
     label1=[UILabel new];;
     image2 =[UIImageView new];
     label2 =[UILabel new];
+     bggview=[UIView new];
+     paomadeng=[[UILabel alloc]init];
+    image3=[[UIImageView alloc]initWithImage:[UIImage imageNamed:@"kitchen_guanggao"]];
      mTap = [[UITapGestureRecognizer alloc] initWithTarget:self action:@selector(tapPressImage:)];
 }
 -(void)initView1{
@@ -358,11 +362,6 @@
     nameLabel.font=[UIFont systemFontOfSize:16];
     nameLabel.textColor=[UIColor blackColor];
     nameLabel.textAlignment=0;
-//    if (_firstArray.count!=0) {
-//        OrderTableViewModel * model=_firstArray[0];
-//       // NSLog(@"%@",model.name);
-//        nameLabel.text=model.name;
-//    }
     nameLabel.text=md.name;//@"皇室生活馆(Jolly Fruit)";//换成网络数据字体
     [view1 sd_addSubviews:@[nameLabel]];
     nameLabel.sd_layout
@@ -372,17 +371,15 @@
     .rightSpaceToView(btnRight,5);
    
     //image1（定位）
-    
     image1.image=[UIImage imageNamed:@"adress"];
     [view1 sd_addSubviews:@[image1]];
     image1.sd_layout
     .leftEqualToView(nameLabel)
-    .topSpaceToView(nameLabel,10)
+    .topSpaceToView(nameLabel,5)
     .widthIs(26/2)
     .heightIs(34/2);
     
     //距离distance
-    
     distance.font=[UIFont systemFontOfSize:14];
     distance.textColor=[UIColor blackColor];
     distance.textAlignment=0;
@@ -403,19 +400,31 @@
     label1.numberOfLines=0;
     label1.text=md.diZhi;//@"广安大街安侨商务";//换成网络数据
      [view1 sd_addSubviews:@[label1]];
+    
     label1.sd_layout
     .leftSpaceToView(image1,5)
     .topEqualToView(image1)
     .rightSpaceToView(distance,5)
     .autoHeightRatio(0);
+  
+    //image3
+    image3.hidden=NO;
+    [view1 sd_addSubviews:@[image3]];
+    image3.sd_layout
+    .leftEqualToView(image1)
+    .topSpaceToView(image1,5)
+    .heightIs(14)
+    .widthIs(14);
+    
+    
+    
     
     //image2
-    
     image2.image=[UIImage imageNamed:@"shop"];
     [view1 sd_addSubviews:@[image2]];
     image2.sd_layout
     .leftEqualToView(image1)
-    .topSpaceToView(label1,10)
+    .topSpaceToView(image1,25)
     .widthIs(26/2)
     .heightIs(24/2);
     //label2(最近一次用过的取餐点)
@@ -432,6 +441,44 @@
     .heightRatioToView(image2,1);
     [label2 setSingleLineAutoResizeWithMaxWidth:150];
     
+    [view1 sd_addSubviews:@[bggview]];
+    bggview.sd_layout
+    .leftEqualToView(image1)
+    .rightSpaceToView(btnRight,10)
+    .topSpaceToView(label1,2.5)
+    .heightIs(20);
+    
+    
+   
+    //跑马灯
+    paomadeng.text=md.guangGaoYu;
+    paomadeng.font=[UIFont systemFontOfSize:14];
+    CGFloat xx =[XYString WidthForString:paomadeng.text withSizeOfFont:14];
+    paomadeng.alpha=.7;
+    paomadeng.frame=CGRectMake(15, 0, xx, 20);
+    paomadeng.clipsToBounds=YES;
+    bggview.clipsToBounds=YES;
+    [bggview addSubview:paomadeng];
+
+    if (paomadeng.text.length>15) {
+        NSLog(@"进入几次啊");
+        paomadeng.frame=CGRectMake(xx, 0, xx, 20);
+        [UIView beginAnimations:nil context:nil];
+        [UIView setAnimationDuration:10];
+        [UIView setAnimationBeginsFromCurrentState:YES];
+        [UIView setAnimationDelegate:self];
+        [UIView  setAnimationCurve:UIViewAnimationCurveLinear];
+        [UIView setAnimationRepeatCount:LONG_MAX];
+        //这得坐标代表什么
+        paomadeng.frame=CGRectMake(-xx, 0, xx, 20);
+        bggview.clipsToBounds=YES;
+        image3.hidden=YES;
+        [UIView commitAnimations];
+       
+
+    }
+    
+
     
     
     

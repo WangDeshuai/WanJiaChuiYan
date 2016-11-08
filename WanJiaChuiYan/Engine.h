@@ -181,4 +181,10 @@ typedef void (^ErrorBlock)(NSError*error);
 
 #pragma mark --查看业绩(小站和厨房
 +(void)ChaKanYeJiUrl:(NSString*)url UrlTwo:(NSString*)Url2 success:(SuccessBlock)aSuccess error:(ErrorBlock)aError;
+#pragma mark --66查看小站宣传语
++(void)ChaKanXiaoZhanXuanChuansuccess:(SuccessBlock)aSuccess error:(ErrorBlock)aError;
+#pragma mark --67更新小站宣传语
++(void)gengXinGuangGao:(NSString *)str success:(SuccessBlock)aSuccess error:(ErrorBlock)aError;
+
+
 @end
